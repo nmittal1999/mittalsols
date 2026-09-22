@@ -2,4 +2,4 @@
 User-agent: *
 Disallow: /cdn-cgi/
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://mittalsols.com/sitemap.xml
