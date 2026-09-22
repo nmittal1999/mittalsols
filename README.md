@@ -1,72 +1,46 @@
-# cloudflare-pages-template
+# Mittal Solutions
 
-Get started with [Cloudflare Pages](https://pages.cloudflare.com/) by deploying this pretty template on your own account, and start playing around.
+One-page website for **Mittal Solutions**, an India-based firm that provides business process services to overseas and domestic clients.
 
-## Step 1
+## Local preview
 
-Clone this Repository to your own GitHub account. 
+Open `index.html` in a browser, or serve the folder with any static file server.
 
-Or download this Repository as a ZIP file by clicking the green button that says "<> Code" and clicking "Download ZIP", then extract the contents to a new folder, and upload the content (and only the content; not the folder) of that folder to a new GitHub Repository.
+The contact form posts to `/api/contact`, which is a Cloudflare Pages Function. For full form testing, use Pages locally or a deployed Pages project:
 
-## Step 2
+```bash
+npx wrangler pages dev .
+```
 
-Access your _free_ Cloudflare account ([new to Cloudflare?](https://developers.cloudflare.com/fundamentals/get-started/)), and go to the Pages tab.
+## Contact form
 
-![pages-tab](/img/readme-img/pages-tab.png)
+The contact section includes:
 
-## Step 3
+- Direct email: `business@mittalsols.com`
+- A working form that sends messages to that address through `functions/api/contact.js`
 
-Go to your Cloudflare Dashboard. Click on the blue "Create a project" button, and select "Connect to Git".
+Delivery order used by the function:
 
-## Step 4
+1. **Resend** if `RESEND_API_KEY` is set in Cloudflare Pages environment variables
+2. **Web3Forms** if `WEB3FORMS_ACCESS_KEY` is set
+3. **FormSubmit** fallback to `business@mittalsols.com` (confirm the first delivery email when prompted)
 
-Connect your GitHub account, select your Repository, and click "Begin setup".
+Optional environment variables:
 
-![github-deploy](/img/readme-img/github-deploy.png)
+- `CONTACT_TO_EMAIL` (defaults to `business@mittalsols.com`)
+- `CONTACT_FROM_EMAIL` (Resend verified sender)
 
-## Step 5
+## Deploy
 
-If you want, you can update some content, including the [index.html](index.html).
+This project is set up for [Cloudflare Pages](https://pages.cloudflare.com/). Connect the repository and deploy with no build step (static output plus Functions).
 
-You might want to update the following files with your own parameters:
-- [robots.txt](robots.txt)
-- [sitemap.xml](sitemap.xml)
+Related files:
 
-## Step 6
+- `functions/_middleware.js` injects social preview meta tags
+- `functions/api/contact.js` handles contact form submissions
+- `robots.txt` and `sitemap.xml` for search indexing
+- `_headers` for Pages header rules
 
-Just hit "Save and Deploy" and let the magic happen! ✨
+## Contact
 
-![success](/img/readme-img/success.png)
-
-## Step 7
-
-Share your beautiful website with the world. 🤓
-
-==> https://cloudflare-pages-template.pages.dev/ (_your link might look different_)
-
-## Step 8 (Metadata)
-
-Added `Functions/_middleware.js` from the GitHub Repo [Dynamic Social Previews Meta Tags with Cloudflare Pages](https://github.com/pew/cloudflare-pages-social-preview), in order to add Meta Tags.
-
-Don't forget to edit the file [_middleware.js](functions/_middleware.js) with your own title, description, and such.
-
-## More (Optional) Steps
-
-[Add custom headers to create Content Security Policies (CSP) and more](https://developers.cloudflare.com/pages/platform/headers/)
-
-[Add a custom domain to a branch](https://developers.cloudflare.com/pages/how-to/custom-branch-aliases/).
-
-![custom-domains](/img/readme-img/custom-domains.png)
-
-[Redirecting www to domain apex](https://developers.cloudflare.com/pages/how-to/www-redirect/)
-
-[Cloudflare Pages gets even faster with Early Hints](https://blog.cloudflare.com/early-hints-on-cloudflare-pages/)
-
-[Build full-stack applications by executing code on the Cloudflare network with help from Cloudflare Workers](https://developers.cloudflare.com/pages/platform/functions/)
-
-# Disclaimer
-
-This is a general introduction to Cloudflare Pages. 
-
-Educational purposes only. This repo does not reflect the opinions of, and is not affiliated with Cloudflare. 
-Screenshots are taken from the Cloudflare dashboard.
+business@mittalsols.com
