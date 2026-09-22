@@ -10,7 +10,7 @@
 	<link rel="shortcut icon" type="image/png" href="favicon.png">
 
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css?1563">
-	<link rel="stylesheet" type="text/css" href="style.css?3100">
+	<link rel="stylesheet" type="text/css" href="style.css?3200">
 	<link rel="stylesheet" type="text/css" href="./css/animate.min.css?7190">
 	<link rel="stylesheet" type="text/css" href="./css/all.min.css">
 </head>
@@ -225,21 +225,64 @@
 <!-- Contact -->
 <section class="section-block section-contact" id="contact">
 	<div class="container">
-		<div class="contact-panel">
-			<div class="row align-items-center g-4">
-				<div class="col-lg-7">
-					<p class="eyebrow light">Contact</p>
-					<h2>Ready to talk about your next process need?</h2>
-					<p class="contact-copy">
-						Tell us what you are working on. We will review your requirements and respond with
-						a practical next step.
+		<div class="section-header contact-section-header">
+			<p class="eyebrow">Contact</p>
+			<h2>Ready to talk about your next process need?</h2>
+			<p class="section-intro">
+				Email us directly or send a message with the form below. Inquiries go to
+				<a href="mailto:business@mittalsols.com">business@mittalsols.com</a>.
+			</p>
+		</div>
+
+		<div class="row g-4 align-items-stretch">
+			<div class="col-lg-5">
+				<div class="contact-info-card">
+					<p class="eyebrow">Direct email</p>
+					<a class="contact-email-link" href="mailto:business@mittalsols.com?subject=Inquiry%20from%20Mittal%20Solutions%20website">business@mittalsols.com</a>
+					<p class="body-copy contact-info-copy">
+						Share a short note about your process needs, timelines, and whether you are an
+						overseas or domestic client. We typically reply within one business day.
 					</p>
+					<ul class="check-list">
+						<li>Business process and operations support</li>
+						<li>Overseas and domestic client inquiries</li>
+						<li>Partnership and service scoping</li>
+					</ul>
 				</div>
-				<div class="col-lg-5 text-lg-end">
-					<a href="mailto:business@mittalsols.com?subject=Inquiry%20from%20Mittal%20Solutions%20website" class="btn btn-light-ms btn-lg">
-						business@mittalsols.com
-					</a>
-					<p class="contact-note">We typically reply within one business day.</p>
+			</div>
+
+			<div class="col-lg-7">
+				<div class="contact-form-card">
+					<h3 class="contact-form-title">Send a message</h3>
+					<form id="contact-form" class="contact-form" novalidate>
+						<div class="row g-3">
+							<div class="col-md-6">
+								<label class="form-label" for="contact-name">Name</label>
+								<input class="form-control form-control-ms" type="text" id="contact-name" name="name" autocomplete="name" maxlength="120" required>
+							</div>
+							<div class="col-md-6">
+								<label class="form-label" for="contact-email">Email</label>
+								<input class="form-control form-control-ms" type="email" id="contact-email" name="email" autocomplete="email" maxlength="254" required>
+							</div>
+							<div class="col-12">
+								<label class="form-label" for="contact-company">Company <span class="optional-tag">optional</span></label>
+								<input class="form-control form-control-ms" type="text" id="contact-company" name="company" autocomplete="organization" maxlength="120">
+							</div>
+							<div class="col-12">
+								<label class="form-label" for="contact-message">Message</label>
+								<textarea class="form-control form-control-ms" id="contact-message" name="message" rows="5" maxlength="5000" required></textarea>
+							</div>
+							<div class="hp-field" aria-hidden="true">
+								<label for="contact-website">Website</label>
+								<input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off">
+							</div>
+							<div class="col-12 contact-form-actions">
+								<button type="submit" class="btn btn-primary-ms" id="contact-submit">Send message</button>
+								<p class="contact-form-note">Messages are delivered to business@mittalsols.com.</p>
+							</div>
+						</div>
+						<p id="contact-form-status" class="form-status" hidden role="status" aria-live="polite"></p>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -273,6 +316,7 @@
 <script src="./js/bootstrap.bundle.min.js?8537"></script>
 <script src="./js/blocs.min.js?4639"></script>
 <script src="./js/lazysizes.min.js" defer></script>
+<script src="./js/contact.js" defer></script>
 <script>
 	document.getElementById('year').textContent = new Date().getFullYear();
 </script>
